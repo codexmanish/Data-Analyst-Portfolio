@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manish Kumar | Data Analyst</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    /* DARK MODE */
+
+    --bg-color:#1a1a1a;
+    --card-color:#2d2d2d;
+    --text-color:#f8f6f6;
+    --main-color:#ffffff;
+    --second-color:#000000;
+
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+
+    --bg-color:#f2f2f2;
+    --card-color:#ffffff;
+    --text-color:#000000;
+    --main-color:#000000;
+    --second-color:#d6d6d6;
+
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg-color);
+    color:var(--text-color);
+    overflow-x:hidden;
+    transition:0.4s;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:var(--main-color);
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text-color);
+    margin-left:30px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--main-color);
+}
+
+#theme-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:var(--main-color);
+    color:rgb(156, 152, 152);
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 10%;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h3{
+    font-size:30px;
+}
+
+.hero-text h1{
+    font-size:75px;
+    color:var(--main-color);
+    margin:10px 0;
+}
+
+.hero-text h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.typing{
+    color:var(--main-color);
+    color: red;
+}
+
+.hero-text p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+/* BUTTONS */
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:white;
+    color:rgb(2, 2, 2);
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    margin-right:15px;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid var(--main-color);
+}
+
+.btn-btn-outline{
+    display:inline-block;
+    padding:14px 35px;
+    background:white;
+    color:rgb(2, 2, 2);
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    margin-right:15px;
+    transition:0.4s;
+}
+
+.btn-btn-outline:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+.btn-btn-outline-outline{
+    background:transparent;
+    border:2px solid var(--main-color);
+}
+
+.social{
+    margin-top:35px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid var(--main-color);
+    border-radius:50%;
+    color:var(--main-color);
+    text-decoration:none;
+    margin-right:15px;
+    transition:0.4s;
+    font-size:20px;
+}
+
+.social a:hover{
+    background:var(--main-color);
+    color:rgb(122, 119, 119);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+/* IMAGE */
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.circle{
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid var(--main-color);
+    box-shadow:0 0 30px var(--main-color);
+    animation:float 4s ease-in-out infinite;
+}
+
+.circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:60px;
+    color:var(--main-color);
+}
+
+/* ABOUT */
+
+.about-box{
+    background:var(--card-color);
+    padding:40px;
+    border-radius:20px;
+    line-height:1.9;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+/* SKILLS */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:var(--card-color);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+.skill-card i{
+    font-size:55px;
+    margin-bottom:20px;
+    color:var(--main-color);
+}
+
+/* PROJECTS */
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:var(--card-color);
+    padding:35px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+.project-card h3{
+    color:var(--main-color);
+    margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:12px;
+    background:var(--card-color);
+    color:var(--text-color);
+    font-size:16px;
+}
+
+.contact-form button{
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:var(--second-color);
+    margin-top:50px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:991px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:55px;
+}
+
+.hero-text h2{
+    font-size:28px;
+}
+
+.circle{
+    width:280px;
+    height:280px;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">Manish Kumar</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button id="theme-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>Hello, It's Me</h3>
+
+<h1>Manish Kumar</h1>
+
+<h2>
+And I'm a
+<span class="typing"></span>
+</h2>
+
+<p>
+Passionate Data Analyst skilled in MIS Reporting,
+Python, SQL, Excel Automation, Dashboard Creation,
+and Data Visualization.
+</p>
+
+<div class="buttons">
+<a href="https://www.linkedin.com/in/manish-kumar-43681a226/" class="btn" target="_blank">Hire Me</a>
+<a href="Manish Resume_compressed.pdf" class="btn-btn-outline" target="_blank">Download CV</a>
+</div>
+
+<div class="social">
+
+<a href="https://github.com/codexmanish?tab=repositories" target="_blank"><i class="fab fa-github" ></i></a>
+
+<a href="https://www.linkedin.com/in/manish-kumar-43681a226/" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="circle">
+
+<img src="default-profile-picture-grey-male-icon.webp"></i>">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="about-box">
+
+I am a passionate Data Analyst and Lead MIS with
+expertise in Python, SQL, Excel Automation,
+Dashboard Creation, and Reporting.
+
+I enjoy transforming raw data into meaningful insights
+that help businesses make smarter decisions.
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="title">My Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<i class="fab fa-python"></i>
+<h3>Python</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-database"></i>
+<h3>SQL</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-chart-column"></i>
+<h3>Power BI</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-file-excel"></i>
+<h3>Excel</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-table"></i>
+<h3>Tableau</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-brain"></i>
+<h3>Analytics</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<h3>Sales Dashboard</h3>
+
+<p>
+Interactive dashboard using Power BI and SQL
+for tracking business performance.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>MIS Automation</h3>
+
+<p>
+Automated Excel reporting system using Python
+reducing manual work.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Data Cleaning Pipeline</h3>
+
+<p>
+Created Python scripts for automated
+data preprocessing and cleaning.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<!-- <section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message" required></textarea>
+<a href="https://wa.me/7017181382?text=Hello%20I%20want%20to%20know%20more"
+   target="_blank"
+   class="btn">
+    Send Message
+</a>
+
+</form>
+
+</section> -->
+
+<section id="contact">
+
+    <h2 class="title">Contact Me</h2>
+
+    <form class="contact-form"
+          onsubmit="sendToWhatsApp(event)">
+
+        <div class="input-box">
+            <label>Your Name <span class="required">*</span></label>
+            <input 
+                type="text" 
+                id="name"
+                placeholder="Your Name" 
+                required
+            >
+        </div>
+
+        <div class="input-box">
+            <label>Your Email <span class="required">*</span></label>
+            <input 
+                type="email" 
+                id="email"
+                placeholder="Your Email" 
+                required
+            >
+        </div>
+
+        <div class="input-box">
+            <label>Your Message <span class="required">*</span></label>
+            <textarea 
+                rows="5" 
+                id="message"
+                placeholder="Your Message" 
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit" class="btn">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<style>
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.required {
+    color: red;
+    font-size: 18px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const text = `Hello, My Name is ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    const whatsappURL = `https://wa.me/7017181382?text=${text}`;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Manish Kumar | All Rights Reserved
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* ========================= */
+/* TYPING EFFECT */
+/* ========================= */
+
+const words = [
+"Data Analyst",
+"Lead MIS",
+"Python Developer",
+"SQL Expert",
+"Dashboard Creator"
+];
+
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+
+function type(){
+
+currentWord = words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.querySelector(".typing").textContent =
+currentWord.substring(0,j);
+
+if(!isDeleting && j === currentWord.length){
+
+isDeleting = true;
+
+setTimeout(type,1000);
+
+return;
+
+}
+
+if(isDeleting && j === 0){
+
+isDeleting = false;
+
+i++;
+
+if(i === words.length){
+i = 0;
+}
+
+}
+
+setTimeout(type,isDeleting ? 60 : 120);
+
+}
+
+type();
+
+/* ========================= */
+/* THEME TOGGLE */
+/* ========================= */
+
+const themeBtn =
+document.getElementById("theme-btn");
+
+themeBtn.onclick = () => {
+
+document.body.classList.toggle("light-mode");
+
+if(document.body.classList.contains("light-mode")){
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+
+}else{
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-moon"></i>';
+
+}
+
+};
+
+</script>
+
+</body>
+</html>
+
